@@ -21,9 +21,7 @@ def extract_domains_from_csv(file_path):
         for row in reader:
             if row.get('eligible_for_submission', 'true').lower() == 'true':
                 identifier = row['identifier'].strip()
-                instruction = row.get('instruction', '').upper()
-                if 'OUT OF SCOPE' not in instruction:
-                    domains.add(identifier)
+                domains.add(identifier)
     
     return domains
 
